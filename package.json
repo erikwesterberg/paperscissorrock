@@ -1,0 +1,25 @@
+{
+  "name": "scissorrock",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/erikwesterberg/paperscissorrock.git",
+  "author": "erka <erik.westerberg@hotmail.se>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-loader": "^8.0.6",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "chai": "^4.2.0",
+    "cucumber": "^5.1.0",
+    "puppeteer": "^1.18.1",
+    "superstatic": "^6.0.4",
+    "webpack": "^4.35.2",
+    "webpack-cli": "^3.3.5"
+  },
+  "scripts": {
+    "cucumber": "superstatic -p 3000 2> /dev/null & cucumber-js; lsof -ti tcp:3000 | xargs kill",
+    "build": "webpack --progress --p --mode=production",
+    "watch": "webpack --progress --watch --mode=development"
+  }
+}
