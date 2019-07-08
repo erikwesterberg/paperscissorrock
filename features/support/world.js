@@ -5,6 +5,7 @@ const puppeteer = require('puppeteer')
 const HOME_PAGE = 'http://localhost:3000'
 
 class RockPaperScissors {
+  
   constructor() { }
 
   // Open the home page using puppeteer
