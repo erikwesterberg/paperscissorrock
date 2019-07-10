@@ -26,6 +26,15 @@ class RockPaperScissors {
 
     expect(actualContent).to.be.eq(expectedContent)
   }
+
+
+
+async clickOnButton(btnName) {
+  const btnSelector = this.btnSelectorFromName(btnName.toLowerCase())
+  await this.page.waitForSelector(btnSelector)
+  await this.page.click(btnSelector)
+  }
 }
+
 
 setWorldConstructor(RockPaperScissors)
