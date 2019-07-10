@@ -1,34 +1,25 @@
-const paper = document.getElementById("paper");
-const rock = document.getElementById("rock");
-const scissors = document.getElementById("scissors");
+const options = document.querySelectorAll(".choice");
 
+// Play game
 
-function Game(userChoice){
-console.log("fucker" + userChoice)
+function play(e) {
+    const user = e.target.id;   
+    console.log(user)
+   
 }
 
-const userMove = () => {
-    paper.addEventListener("click", function() {
-        Game("Paper")
-    })
-    rock.addEventListener("click", function() {
-        Game("Rock")
-    })
-    scissors.addEventListener("click", function() {
-        Game("Scissors")
-    })
+// Get computers choice
+
+function getComputerChoice() {
+    const rand = Math.random();
+    if(rand < 0.34) {
+        return "rock";
+    } else if(rand <= 0.67) {
+        return "paper";
+    } else {
+        return "scissors";
+    }
 }
 
-userMove()
 
-
-
-
-
-
-
-
-
-
-
-
+options.forEach(option =>option.addEventListener("click", play));

@@ -7,9 +7,10 @@ Background:
   Given I visit the site
   Then I should see "Rock Paper Scissors"
   And I should see "CHOOSE WISE"
+  
 
 Scenario: Computer chooses Paper and I choose Rock
-  When I click on "Rock"
+  When I click "Rock" button
   And the computer chooses paper
   Then I should see "You got killed!"
 

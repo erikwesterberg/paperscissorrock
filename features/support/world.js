@@ -23,18 +23,18 @@ class RockPaperScissors {
   async pageHasTextContent(expectedContent) {
     const pageContent = await this.page.content()
     const actualContent = pageContent.match(expectedContent)[0]
-
     expect(actualContent).to.be.eq(expectedContent)
   }
 
+  async clickOnButton(btnName) {      
+    await this.page.evaluate((btnName) => {
+        document.getElementById(btnName).click();
+        }, btnName);  
+      }
+    }
 
 
-async clickOnButton(btnName) {
-  const btnSelector = this.btnSelectorFromName(btnName.toLowerCase())
-  await this.page.waitForSelector(btnSelector)
-  await this.page.click(btnSelector)
-  }
-}
+
 
 
 setWorldConstructor(RockPaperScissors)
