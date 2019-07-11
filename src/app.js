@@ -81,6 +81,13 @@ const showWinner = (winner, Computer) => {
        `;  
      }
    modal.style.display = "block"
- }
+  }
 
+        // Clear Model
+function clearModal(e) {
+    if (e.target == modal) {
+    modal.style.display = "none";
+  }
+}
 options.forEach(option => option.addEventListener("click", play));
+window.addEventListener("click", clearModal);

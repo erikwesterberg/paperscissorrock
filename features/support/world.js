@@ -26,6 +26,11 @@ class RockPaperScissors {
     expect(actualContent).to.be.eq(expectedContent)
   }
 
+  async clickOnOption(content) {
+    await this.page.waitForSelector(content)
+    await this.page.click(content)
+  }
+
   async clickOnButton(btnName) {      
     await this.page.evaluate((btnName) => {
         document.getElementById(btnName).click();
