@@ -19,10 +19,16 @@ When('the computer chooses {string}', async function (choice) {
   
 });
 
+When('I see {string}',async function (string) {
+  return await this.computerSelection(string)
+});
+
+Then('I Click {string} button', async function (string) {
+  return await this.clickOnButton(string)
+ });
 
 
-
-  // After(async function () {
+// After(async function () {
 //   return await this.closeHomePage()
 // });
 

@@ -9,9 +9,9 @@ Background:
   And I should see "CHOOSE WISE"
 
 Scenario: Computer chooses Rock and I choose Rock
-  When I click "Rock" button
+  When I click "rock" button
   And the computer chooses "rock"
-  Then I should see "Its A Draw"
-  And I Click "Rock" button
+  Then I should see "Computer chose"
+  And I Click "rock" button
   Then I should see "Rock Paper Scissors"
   And I should see "CHOOSE WISE"

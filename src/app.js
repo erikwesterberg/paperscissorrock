@@ -31,59 +31,59 @@ const computerChoice = () => {
 // u = user
 // c = computer
 
-const getWinner = (u, c) => {
-    if(u === c) {
-        return "draw";
-    } else if(u === "rock") {
+const getWinner = (c, p) => {
+    if(p === c ) {
+        return "rock";
+    } else if(p === "rock") {
         if(c === "paper") {
             return "computer";
         } else {
-            return "user";
+            return "player";
         }   
-     } else if(u === "user") {
+    }  else if(p === "paper") {
         if(c === "scissors") {
             return "computer";
         } else {
-            return "user";
+            return "player";
         }
-    } else if (u === "scissors") {
+    } else if (p === "scissors") {
         if(c === "rock") {
             return "computer"
         } else {
-            return "user"
+            return "player"
         }
     }
+    console.log(getWinner())
 } 
 
 // Function to show the winner 
 
 const showWinner = (winner, Computer) => {
-    if(winner === "user") {
-        // Show result on webpage
-       result.innerHTML = `
-       <h1 class="text-win">You killed it!</h1>
-       <button class="fas fa-hand-${Computer} fa-10x"></button>
-       <p>Computer chose <strong>${Computer}</strong></p>
-       `;  
-   } else if(winner === "computer") {
-       // Show result on webpage
-       result.innerHTML = `
-       <h1 class="text-lose">You got killed!</h1>
-       <button class="fas fa-hand-${Computer} fa-10x"></button>
-       <p>Computer chose <strong>${Computer}</strong></p>
-       `;  
-   } else {
-       // Show result on webpage
-       result.innerHTML = `
-       <h1>"Its A Draw"</h1>
-       <button class="fas fa-hand-${Computer} fa-10x"></button>
-       <p>Computer chose <strong>${Computer}</strong></p>
-       `;  
-     }
+    if(winner === "player") {
+        // show modal result
+        result.innerHTML = `
+        <h1 class="text-win">You killed it!</h1>
+        <button class="fas fa-hand-${Computer} fa-10x"></button>
+        <p><strong>Computer chose</strong></p>
+        `;  
+    } else if(winner === "computer") {
+        result.innerHTML = `
+        <h1 class="text-lose">You got killed!</h1>
+        <button class="fas fa-hand-${Computer} fa-10x"></button>
+        <p><strong>Computer chose</strong></p>
+        `;  
+    } else {
+        result.innerHTML = `
+        <h1>"Its A Draw"</h1>
+        <button class="fas fa-hand-${Computer} fa-10x"></button>
+        <p><strong>Computer chose</strong></p>
+        `;  
+      }
    modal.style.display = "block"
   }
 
-        // Clear Model
+// Clear Model
+
 function clearModal(e) {
     if (e.target == modal) {
     modal.style.display = "none";
