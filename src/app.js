@@ -1,16 +1,19 @@
 const options = document.querySelectorAll(".choice");
+const result = document.querySelector(".modal");
 
 // Play game
 
 const play = (e) => {
     const user = e.target.id;   
-    console.log(user)
-   
+    const Computer = computerChoice();
+    const winner = getWinner(user, Computer);
+    showWinner(winner, Computer);
+   console.log(user, Computer, winner)
 }
 
 // Get computers choice
 
-const ComputerChoice = () => {
+const computerChoice = () => {
     const rand = Math.random();
     if(rand < 0.34) {
         return "rock";
@@ -23,32 +26,56 @@ const ComputerChoice = () => {
 
 
 // Get game winner 
-// p = person
+// u = user
 // c = computer
-const getWinner = (p, c) => {
-    if(p === c ) {
+const getWinner = (u, c) => {
+    if(u === c ) {
         return "draw";
-    } else if(p === "rock") {
+    } else if(u === "rock") {
         if(c === "paper") {
             return "computer";
         } else {
-            return "player";
+            return "user";
         }   
-    }  else if(p === "paper") {
+    }  else if(u === "user") {
         if(c === "scissors") {
             return "computer";
         } else {
-            return "player";
+            return "user";
         }
-    } else if (p === "scissors") {
+    } else if (u === "scissors") {
         if(c === "rock") {
             return "computer"
         } else {
-            return "player"
+            return "user"
         }
     }
 } 
 
+const showWinner = (winner, Computer) => {
+    if(winner === "user") {
+        // Show result on webpage
+       result.innerHTML = `
+       <h1 class="text-win">You killed it!</h1>
+       <button class="fas fa-hand-${Computer} fa-10x"></button>
+       <p>Computer chose <strong>${Computer}</strong></p>
+       `;  
+   } else if(winner === "computer") {
+       // Show result on webpage
+       result.innerHTML = `
+       <h1 class="text-lose">You got killed!</h1>
+       <button class="fas fa-hand-${Computer} fa-10x"></button>
+       <p>Computer chose <strong>${Computer}</strong></p>
+       `;  
+   } else {
+       // Show result on webpage
+       result.innerHTML = `
+       <h1>"Its A Draw"</h1>
+       <button class="fas fa-hand-${Computer} fa-10x"></button>
+       <p>Computer chose <strong>${Computer}</strong></p>
+       `;  
+     }
+   }
 
 
-options.forEach(option =>option.addEventListener("click", play));
+options.forEach(option => option.addEventListener("click", play));
