@@ -1,5 +1,6 @@
 const options = document.querySelectorAll(".choice");
-const result = document.querySelector(".modal");
+const modal = document.querySelector(".modal");
+const result = document.getElementById("result");
 
 // Play game
 
@@ -8,7 +9,7 @@ const play = (e) => {
     const Computer = computerChoice();
     const winner = getWinner(user, Computer);
     showWinner(winner, Computer);
-   console.log(user, Computer, winner)
+    
 }
 
 // Get computers choice
@@ -28,6 +29,7 @@ const computerChoice = () => {
 // Get game winner 
 // u = user
 // c = computer
+
 const getWinner = (u, c) => {
     if(u === c ) {
         return "draw";
@@ -52,6 +54,8 @@ const getWinner = (u, c) => {
     }
 } 
 
+// Function to show the winner 
+
 const showWinner = (winner, Computer) => {
     if(winner === "user") {
         // Show result on webpage
@@ -75,7 +79,10 @@ const showWinner = (winner, Computer) => {
        <p>Computer chose <strong>${Computer}</strong></p>
        `;  
      }
-   }
+   modal.style.display = "block"
+ }
+
+   
 
 
 options.forEach(option => option.addEventListener("click", play));
