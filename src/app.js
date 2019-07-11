@@ -1,10 +1,12 @@
 const options = document.querySelectorAll(".choice");
 const modal = document.querySelector(".modal");
 const result = document.getElementById("result");
+const restart = document.getElementById("restart");
 
 // Play game
 
 const play = (e) => {
+    restart.style.display = "inline-block";
     const user = e.target.id;   
     const Computer = computerChoice();
     const winner = getWinner(user, Computer);
@@ -25,13 +27,12 @@ const computerChoice = () => {
     }
 }
 
-
 // Get game winner 
 // u = user
 // c = computer
 
 const getWinner = (u, c) => {
-    if(u === c ) {
+    if(u === c) {
         return "draw";
     } else if(u === "rock") {
         if(c === "paper") {
@@ -39,7 +40,7 @@ const getWinner = (u, c) => {
         } else {
             return "user";
         }   
-    }  else if(u === "user") {
+     } else if(u === "user") {
         if(c === "scissors") {
             return "computer";
         } else {
@@ -81,8 +82,5 @@ const showWinner = (winner, Computer) => {
      }
    modal.style.display = "block"
  }
-
-   
-
 
 options.forEach(option => option.addEventListener("click", play));
