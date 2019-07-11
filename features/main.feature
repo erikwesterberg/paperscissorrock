@@ -8,20 +8,20 @@ Background:
   Then I should see "Rock Paper Scissors"
   And I should see "CHOOSE WISE"
   
-
-Scenario: Computer chooses Paper and I choose Rock
+Scenario: Computer chooses Rock and I choose Rock
   When I click "Rock" button
-  And the computer chooses "paper"
-  Then I should see "You got killed!"
+  And the computer chooses "rock"
+  Then I should see "Its A Draw"
+
+# Scenario: Computer chooses Paper and I choose Rock
+#   When I click "Rock" button
+#   And the computer chooses "paper"
+#   Then I should see "You got killed!"
 
 # Scenario: Computer chooses Scissors and I choose Rock
 #   When I click on "Rock"
 #   And the computer chooses scissors
 #   Then I should see "You killed it!"
 
-# Scenario: Computer chooses Rock and I choose Rock
-#   When I click on "Rock"
-#   And the computer chooses rock
-#   Then I should see "Its A Draw"
-  
+
   

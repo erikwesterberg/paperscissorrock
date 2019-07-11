@@ -34,12 +34,10 @@ class RockPaperScissors {
     
       async computerChoice(choice){
         const inputSelector = `#${choice}`
-        await this.page.click(inputSelector)
+      
     }
 
-
-
-    }
+  }
 
 
 setWorldConstructor(RockPaperScissors)
