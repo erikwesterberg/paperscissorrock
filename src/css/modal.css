@@ -12,10 +12,11 @@
     width: 100%;
     overflow: auto;
     background: rgba(0,0,0,0.5);
+    
 }
 
 .modal-content {
-    background: #fff;
+    background: yellow;
     text-align: center;
     margin: 10% auto;
     width: 350px;

@@ -16,9 +16,10 @@
 }
 
 body {
+    
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
-    background: #fff;
+    background: yellow;
     color: #333;
 }
 
@@ -83,6 +84,7 @@ body {
     grid-gap: 2rem;
     margin-top: 3rem;
     text-align: center;
+    
 }
 .choice {
     cursor: pointer;
