@@ -32,6 +32,13 @@ class RockPaperScissors {
         }, btnName);
       }
     
+      async computerChoice(choice){
+        const inputSelector = `#${choice}`
+        await this.page.click(inputSelector)
+    }
+
+
+
     }
 
 
