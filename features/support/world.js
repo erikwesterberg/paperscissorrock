@@ -29,12 +29,10 @@ class RockPaperScissors {
   async clickOnButton(btnName) {      
     await this.page.evaluate((btnName) => {
         document.getElementById(btnName).click();
-        }, btnName);  
+        }, btnName);
       }
+    
     }
-
-
-
 
 
 setWorldConstructor(RockPaperScissors)

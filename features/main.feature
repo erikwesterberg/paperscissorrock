@@ -11,7 +11,7 @@ Background:
 
 Scenario: Computer chooses Paper and I choose Rock
   When I click "Rock" button
-  And the computer chooses paper
+  And the computer chooses "paper"
   Then I should see "You got killed!"
 
 # Scenario: Computer chooses Scissors and I choose Rock
